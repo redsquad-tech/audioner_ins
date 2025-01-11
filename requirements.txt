@@ -1,0 +1,6 @@
+faster-whisper>=1.1.0
+ctranslate2==4.4.0
+openai
+torch
+python-dotenv
+streamlit
