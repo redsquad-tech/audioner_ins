@@ -4,3 +4,7 @@ openai
 torch
 python-dotenv
 streamlit
+transformers
+accelerate>=0.26.0
+ffmpeg
+ffmpeg-python

@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  demo:
+    container_name: audioner_ins
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8088:8501"
+    env_file: .env
+    volumes:
+      - ./:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['7']
+              capabilities: [ gpu ]
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
